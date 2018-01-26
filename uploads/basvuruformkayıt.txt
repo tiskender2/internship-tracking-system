@@ -1,0 +1,300 @@
+<div class="col-lg-11">
+<div class="card">
+                    <div class="card-body">
+                      <form class="form-horizontal">
+  -ögrencinin bilgileri-
+  <br><br>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 form-control-label">T.C. Kimlik No</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+
+                          <label class="col-sm-2 form-control-label">N. Cüzdaný Seri No</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 form-control-label">Baba Adý</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+                       
+                          <label class="col-sm-2 form-control-label">Ana Adý</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 form-control-label">Doðum Yeri</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+
+                          <label class="col-sm-2 form-control-label">Doðum Tarihi</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 form-control-label">Nüfusa Kayýtlý Olduðu Ýl</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+
+                          <label class="col-sm-2 form-control-label">Ýlçe</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 form-control-label">Mahalle-Köy</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+  
+                          <label class="col-sm-2 form-control-label">Cilt No</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-2 form-control-label">Aile Sýra No</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+
+                          <label class="col-sm-2 form-control-label">Sýra No</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 form-control-label">Verildiði Nüfus Dairesi</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+
+                          <label class="col-sm-2 form-control-label">Veriliþ Tarihi</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+                        <div class="form-group row">
+                          <label class="col-sm-2 form-control-label">Veriliþ Nedeni</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+
+                          <label class="col-sm-2 form-control-label">Nüfusa Kayýtlý Olduðu Ýl</label>
+                          <div class="col-sm-4">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                          <div class="form-group row">
+                            <label class="col-sm-2 form-control-label">Adres</label>
+                          <div class="col-sm-10">
+                            <textarea name="" id="" cols="8" rows="3" class="form-control"></textarea>
+                          </div>
+                         </div>
+
+  -staj baslama bitis-
+  <br><br>
+
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Staja Baþlama Tarihi</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Staj Bitiþ Tarihi</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Süresi(Gün)</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+
+<br> Sirket <br><br>
+
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Sirket Secin</label>
+                          <div class="col-sm-9 select">
+                            <select name="account" class="form-control">
+                              <option>Sirket 1</option>
+                              <option>Sirket 2</option>
+                              <option>Sirket 3</option>
+                              <option>Sirket 4</option>
+                            </select>
+                          </div>
+                        </div>
+
+                    <div class="line"></div>
+                    
+
+
+
+                  </form>
+
+
+
+                    <div class="form-group row">
+                      <label class="col-sm-3 form-control-label">Sirket eklemek için týklayýn..</label>
+                      <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary">Þirket Ekle</button>
+                      <!-- Modal-->
+                      <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" class="modal fade text-left" style="display: none;" aria-hidden="true">
+                        <div role="document" class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 id="exampleModalLabel" class="modal-title">Yeni Þirket Ekle</h4>
+                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                            </div>
+                            <div class="modal-body">
+                              <form>
+                                
+
+                        <div class="line"></div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Kurumun Adý</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Adresi</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Hizmet Alaný</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Telefon No</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Faks No</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">E-posta</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Web Adresi</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+  -yetkili bilgileri-
+        <br><br>
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Yetkili Adý</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+  
+            <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">Görev Ve Unvaný</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="form-group row">
+                          <label class="col-sm-3 form-control-label">E-Posta</label>
+                          <div class="col-sm-9">
+                            <input type="text" class="form-control">
+                          </div>
+                        </div>
+
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-primary">Kaydet</button>
+                            </div>
+                              </form>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+               
+  
+
+
+
+                    </div>
+                  </div>
+                  </div>

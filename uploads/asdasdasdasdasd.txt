@@ -1,0 +1,202 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Duyuru extends CI_Controller{
+
+	public function __construct(){
+		parent::__construct();
+		$this->load->view('index');
+		$this->load->view('duyuru/duyuru_header');
+		$this->load->model('duyuru_Model');
+	}
+
+
+//duyuru_güncelle : dosya update yap
+
+
+
+
+	public function index(){
+
+		$result = $this->duyuru_Model->duyuru_Getir();
+		$data['duyurular']= $result;
+		$this->load->view('duyuru/duyuru',$data);
+	}
+
+
+	public function duyuru_Ekle(){
+		$this->load->view("duyuru/duyuru_ekle");
+	}
+
+
+
+	public function duyuru_Ekle_islemi(){
+		
+		if(isset($_POST['btn_ekle'])){
+			
+			$this->form_validation->set_rules('duyuru_baslik','Duyuru Baþlýk',"required");
+			$this->form_validation->set_rules('duyuru_icerik','Duyuru Ýçerik',"required");
+			
+			if($this->form_validation->run()==TRUE){
+				
+				$tarih = date('Y-m-d');
+				$ad_soyad = $this->session->userdata("ad_soyad");
+				$duyuru_baslik = $this->input->post('duyuru_baslik');
+				$duyuru_icerik = $this->input->post('duyuru_icerik');
+
+
+//dosya upload
+				$hedefdosya="Dosya Yok";
+				if(isset($_FILES['duyuru_dosya'])){
+
+					$hata = $_FILES['duyuru_dosya']['error'];
+  					if($hata == 0) {
+		        		$hedefdizin="./uploads/";
+		        		$hedefdosya=$hedefdizin.$_FILES['duyuru_dosya']['name'];		// veritabanýna dosya yolu kaydedilir.
+		        		
+						$tmp_name=$_FILES['duyuru_dosya']['tmp_name'];
+		        		
+		        		$dosyaadi=$_FILES['duyuru_dosya']['name'];
+		        		$uzanti=explode(".", $dosyaadi);
+		        		$uzanti=$uzanti[count($uzanti)-1];
+		        		
+
+		        		if(!file_exists($hedefdosya)){
+			        		if($uzanti == "txt" || $uzanti == "pdf" || $uzanti == "doc" || $uzanti == "docx" || $uzanti == "rar"){
+			        			move_uploaded_file($tmp_name, $hedefdosya);
+			        		}
+			       			else{
+        						$this->session->set_flashdata('tiphatasi','Seçtiðiniz dosya yüklenemez lütfen uzantýsý txt , pdf , docx veya rar olan dosyalarý yükleyin..');
+        						redirect("duyuru/duyuru_ekle");			
+			        		}
+        				}
+        				else{
+        					$this->session->set_flashdata('dosyamevcut','Yüklemeye çalýþtýðýnýz dosya daha önceden zaten yüklenmiþ.. Bu dosyayý yüklemek istiyorsanýz lütfen ismini deðiþtirin.');
+        					redirect("duyuru/duyuru_ekle");
+        				}
+
+        			}
+//**
+					$data= array('duyuru_baslik'   => $duyuru_baslik ,
+	  						     'duyuru_aciklama' => $duyuru_icerik ,
+	  						     'duyuru_tarih'	   => $tarih ,
+	  						     'ad_soyad'  	   => $ad_soyad ,
+	  						     'duyuru_dosya'	   => $hedefdosya
+								);
+
+					$this->duyuru_Model->duyuru_Ekle($data);
+					redirect("duyuru/");
+
+				}
+		}
+			else{
+				$data['eksikgiris']="Tüm alanlarý doldurunuz..";
+				$this->load->view('duyuru/duyuru_ekle',$data);
+			}	
+		}
+	}
+
+
+
+	public function duyurularim(){
+		$result = $this->duyuru_Model->duyuru_Getir();
+		$data['duyurular']= $result;
+		$this->load->view('duyuru/duyurularim',$data);
+	}
+
+
+
+
+
+	public function duyuru_Sil($id){
+		$result = $this->duyuru_Model->duyuru_Sil($id);
+		redirect('duyuru/');
+	}
+
+
+
+
+
+
+
+
+	public function duyuru_Guncelle($id){
+		$duyurular=$this->duyuru_Model->idye_göre_duyuru_Getir($id);
+		$data['duyurular']=$duyurular;
+		$data['id']=$id;
+		$this->load->view("duyuru/duyuru_guncelle",$data);
+	}
+
+	public function duyuru_Guncelle_islemi($id){
+		
+
+		if(isset($_POST['btn_guncelle'])){
+			$this->form_validation->set_rules('duyuru_baslik','Duyuru Baþlýk',"required");
+			$this->form_validation->set_rules('duyuru_icerik','Duyuru Ýçerik',"required");
+
+			if($this->form_validation->run()==TRUE){
+				$duyurubaslik = $this->input->post('duyuru_baslik');
+				$duyuruicerik = $this->input->post('duyuru_icerik');
+
+
+				$hedefdosya="Dosya Yok";
+				if(isset($_FILES['duyuru_dosya'])){
+
+					$hata = $_FILES['duyuru_dosya']['error'];
+  					if($hata == 0) {
+		        		$hedefdizin="./uploads/";
+		        		$hedefdosya=$hedefdizin.$_FILES['duyuru_dosya']['name'];		// veritabanýna dosya yolu kaydedilir.
+		        		
+						$tmp_name=$_FILES['duyuru_dosya']['tmp_name'];
+		        		
+		        		$dosyaadi=$_FILES['duyuru_dosya']['name'];
+		        		$uzanti=explode(".", $dosyaadi);
+		        		$uzanti=$uzanti[count($uzanti)-1];
+		        		
+
+		        		if(!file_exists($hedefdosya)){
+			        		if($uzanti == "txt" || $uzanti == "pdf" || $uzanti == "doc" || $uzanti == "docx" || $uzanti == "rar"){
+			        			move_uploaded_file($tmp_name, $hedefdosya);
+			        		}
+			       			else{
+        						$this->session->set_flashdata('tiphatasi','Seçtiðiniz dosya yüklenemez lütfen uzantýsý txt , pdf , docx veya rar olan dosyalarý yükleyin..');
+        						redirect("duyuru/duyuru_Guncelle/".$id."");			
+			        		}
+        				}
+        				else{
+        					$this->session->set_flashdata('dosyamevcut','Yüklemeye çalýþtýðýnýz dosya daha önceden zaten yüklenmiþ.. Bu dosyayý yüklemek istiyorsanýz lütfen ismini deðiþtirin.');
+        					redirect("duyuru/duyuru_Guncelle/".$id."");
+        				}
+
+        			}
+
+					$data= array('duyuru_baslik'   => $duyuru_baslik ,
+	  						     'duyuru_aciklama' => $duyuru_icerik ,
+	  						     'duyuru_dosya'	   => $hedefdosya
+								);
+
+					$this->duyuru_Model->duyuru_Guncelle($id,$data);
+					redirect("duyuru/");
+
+				}
+
+			}
+			else {
+				$data['eksikgiris']="Tüm alanlarý doldurunuz..";
+				$data['id']=$id;
+			$this->load->view('duyuru/duyuru_guncelle',$data);
+			}
+		}
+	}
+
+
+
+
+
+
+}
+
+
+
+
+?>
