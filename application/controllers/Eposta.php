@@ -21,7 +21,7 @@ class Eposta extends MY_Controller {
 	$mail->SetLanguage("tr", "phpmailer/language");
 	$mail->CharSet  ="utf-8";
 	$mail->Username="tolgaiskendr@gmail.com"; // Mail adresimizin kullanicı adi
-	$mail->Password="123456789tolga54"; // Mail adresimizin sifresi
+	$mail->Password="-----"; // Mail adresimizin sifresi
 	$mail->SetFrom("tolgaiskendr@gmail.com", "KTU Staj Takip Uygulamasi Bilgilendirme"); // Mail attigimizda gorulecek ismimiz
 	$mail->AddAddress("m.furkanozturkk@gmail.com"); // Maili gonderecegimiz kisi yani alici
 	$mail->Subject = "Mesaj Basligi"; // Konu basligi
